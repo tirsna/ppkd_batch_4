@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_batch_4/tes.dart';
+import 'package:ppkd_batch_4/sclingfigma.dart';
+import 'package:ppkd_batch_4/tugas3.dart';
+// import 'package:ppkd_batch_4/tester.dart';
+// import 'package:ppkd_batch_4/tugas4.dart';
 //import 'package:ppkd_batch_4/tugas2.dart';
-import 'package:ppkd_batch_4/tugas5.dart';
+// import 'package:ppkd_batch_4/tugas5.dart';
 //import 'package:ppkd_batch_4/tugas5.dart';
 
 void main() {
@@ -34,7 +37,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
       ),
-      home: Tugas5(),
+      home: Sclingfigma(),
     );
   }
 }

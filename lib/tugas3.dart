@@ -58,8 +58,8 @@ class Tugas3 extends StatelessWidget {
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   crossAxisCount: 3,
-                  mainAxisSpacing: 5,
-                  crossAxisSpacing: 5,
+                  mainAxisSpacing: 6,
+                  crossAxisSpacing: 9,
                   children: <Widget>[
                     Container(
                       padding: const EdgeInsets.all(10),
