@@ -50,7 +50,7 @@ class _MyWidgetState extends State<Sclingfigma> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'username',
+                    'usernames',
                     style: TextStyle(
                       color: Color.fromARGB(255, 253, 253, 253),
                       fontSize: 16,
