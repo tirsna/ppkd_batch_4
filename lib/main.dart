@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_batch_4/tugas_day16.dart';
+import 'package:ppkd_batch_4/pagebuttonnav.dart';
+import 'package:ppkd_batch_4/tugas7.dart';
 // import 'package:ppkd_batch_4/tester.dart';
 // import 'package:ppkd_batch_4/tugas4.dart';
 //import 'package:ppkd_batch_4/tugas2.dart';
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
       ),
-      home: Tugas7flutterWidget(),
+      home: Pagebuttonnav(),
     );
   }
 }
