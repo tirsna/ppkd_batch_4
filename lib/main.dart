@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ppkd_batch_4/checkbox.dart';
+import 'package:ppkd_batch_4/day18/daftarui.dart';
+import 'package:ppkd_batch_4/day18/splashscreen.dart';
+import 'package:ppkd_batch_4/tugas10.dart';
 
-import 'package:ppkd_batch_4/tugas9.dart';
 // import 'package:ppkd_batch_4/tester.dart';
 // import 'package:ppkd_batch_4/tugas4.dart';
 //import 'package:ppkd_batch_4/tugas2.dart';
@@ -8,12 +11,19 @@ import 'package:ppkd_batch_4/tugas9.dart';
 //import 'package:ppkd_batch_4/tugas5.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const MyApp(email: '', nama: '', kota: ''));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  const MyApp({
+    super.key,
+    required this.email,
+    required this.nama,
+    required this.kota,
+  });
+  final String email;
+  final String nama;
+  final String kota;
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -37,7 +47,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
       ),
-      home: Tugas9(),
+      home: SplashScreenDay18(email: '', nama: '', kota: ''),
     );
   }
 }
