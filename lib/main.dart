@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_batch_4/checkbox.dart';
-import 'package:ppkd_batch_4/day18/daftarui.dart';
-import 'package:ppkd_batch_4/day18/splashscreen.dart';
+
 import 'package:ppkd_batch_4/tugas10.dart';
 
 // import 'package:ppkd_batch_4/tester.dart';
