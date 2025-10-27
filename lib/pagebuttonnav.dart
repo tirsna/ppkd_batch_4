@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_batch_4/tentangapl.dart';
-import 'package:ppkd_batch_4/tugas7.dart';
+import 'package:ppkd_batch_4/day1/10/tugas7.dart';
 
 class Pagebuttonnav extends StatefulWidget {
   const Pagebuttonnav({super.key});

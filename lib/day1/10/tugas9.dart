@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_batch_4/listmap.dart';
-import 'package:ppkd_batch_4/listmodel.dart';
-import 'package:ppkd_batch_4/listview.dart';
+import 'package:ppkd_batch_4/day18/listmap.dart';
+import 'package:ppkd_batch_4/day18/listmodel.dart';
+import 'package:ppkd_batch_4/day18/listview.dart';
 
 class Tugas9 extends StatefulWidget {
   const Tugas9({super.key});

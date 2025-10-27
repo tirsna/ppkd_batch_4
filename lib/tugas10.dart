@@ -57,7 +57,7 @@ class _Tugas10State extends State<Tugas10> {
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 20),
-                  Text("email"),
+                  Text("nama"),
                   SizedBox(height: 8),
                   TextFormField(
                     controller: namacontroler,
@@ -81,14 +81,14 @@ class _Tugas10State extends State<Tugas10> {
                     autovalidateMode: AutovalidateMode.onUnfocus,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      hintText: "masukan email anda",
+                      hintText: "masukan nama anda",
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'email tidak boleh kosong';
+                        return 'nama tidak boleh kosong';
                       }
                       if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                        return 'format email tidak valid';
+                        return 'format nama tidak valid';
                       }
                       return null;
                     },
@@ -119,8 +119,7 @@ class _Tugas10State extends State<Tugas10> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => 
-                                HalamanPenyambut(
+                                builder: (context) => HalamanPenyambut(
                                   email: emailcontroler.text,
                                   nama: namacontroler.text,
                                   kota: domcontroler.text,

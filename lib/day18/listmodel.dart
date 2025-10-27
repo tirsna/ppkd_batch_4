@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_batch_4/day18/appimeage.dart';
-// import 'package:ppkd_batch_4/day18/model_sepatu.dart';
+import 'package:ppkd_batch_4/day18/modelspatu.dart';
 import 'package:ppkd_batch_4/day18/rupiah.dart';
 
 class Listmodel extends StatefulWidget {

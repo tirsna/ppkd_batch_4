@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:ppkd_batch_4/day18/latihan_splas.dart';
+import 'package:ppkd_batch_4/day19/daftarui.dart';
+import 'package:ppkd_batch_4/day19/db_helper.dart';
+import 'package:ppkd_batch_4/penyambut.dart';
 
 class Sclingfigma extends StatefulWidget {
   const Sclingfigma({super.key});
@@ -9,9 +13,11 @@ class Sclingfigma extends StatefulWidget {
 
 class _MyWidgetState extends State<Sclingfigma> {
   @override
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(0, 0, 0, 0),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -21,7 +27,7 @@ class _MyWidgetState extends State<Sclingfigma> {
               width: double.infinity,
               decoration: BoxDecoration(
                 image: const DecorationImage(
-                  image: AssetImage('assets/images/kucingcool.jpg'),
+                  image: AssetImage('assets/images/green earth.png'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -29,9 +35,9 @@ class _MyWidgetState extends State<Sclingfigma> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Hallo!',
+                    'GREEN EARTH!',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 250, 248, 248),
+                      color: Color.fromARGB(255, 0, 0, 0),
                       fontSize: 40,
                     ),
                   ),
@@ -50,45 +56,92 @@ class _MyWidgetState extends State<Sclingfigma> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'usernames',
+                    'Email',
                     style: TextStyle(
-                      color: Color.fromARGB(255, 253, 253, 253),
+                      color: Color.fromARGB(255, 12, 2, 2),
                       fontSize: 16,
                     ),
                   ),
                   SizedBox(height: 5),
 
-                  TextField(
+                  TextFormField(
+                    controller: emailController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
-                      hintText: 'Trisna',
+                      hintText: 'Masukan email anda',
                     ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'emil tidak boleh kosong';
+                      }
+                      if (!RegExp(
+                        r'^[^@\s]+@[^@\s]+\.[^@\s]+$',
+                      ).hasMatch(value)) {
+                        return 'Format email tidak valid';
+                      }
+                      return null;
+                    },
                   ),
                   Text(
                     'Password',
-                    style: TextStyle(color: Color.fromARGB(255, 247, 247, 247)),
+                    style: TextStyle(color: Color.fromARGB(255, 12, 0, 0)),
                   ),
                   SizedBox(height: 5),
 
-                  TextField(
+                  TextFormField(
+                    controller: passwordController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Password',
                       suffixIcon: Icon(Icons.visibility_off),
                     ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Password tidak boleh kosong';
+                      }
+                      if (value.length < 8) {
+                        return 'Password minimal 8 karakter';
+                      }
+                      return null;
+                    },
                   ),
                   SizedBox(width: double.infinity, height: 23),
                   SizedBox(height: 20),
                   SizedBox(
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text(
-                        "login",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 247, 247, 247),
-                        ),
-                      ),
+                      onPressed: () async {
+                        final email = emailController.text.trim();
+                        final password = passwordController.text.trim();
+                        final user = await DbHelper.loginUser(
+                          email: email,
+                          password: password,
+                        );
+                        if (user != null) {
+                          PreferenceHandler.saveLogin(true);
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              // Untuk memindahkan ke halaman tertuju
+                              builder: (context) => HalamanPenyambut(
+                                email: email,
+                                nama: "",
+                                kota: '',
+                              ),
+                            ),
+                          );
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text("Login Berhasil")),
+                          );
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Email Atau Password Salah '),
+                            ),
+                          );
+                        }
+                      },
+
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(350, 350),
                         shape: RoundedRectangleBorder(
@@ -96,9 +149,42 @@ class _MyWidgetState extends State<Sclingfigma> {
                         ),
                         backgroundColor: const Color.fromARGB(255, 83, 25, 117),
                       ),
+                      child: Text(
+                        "login",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 247, 247, 247),
+                        ),
+                      ),
                     ),
                   ),
-                  SizedBox(height: 60),
+                  SizedBox(height: 15),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "Don't have an account?",
+                        style: TextStyle(
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w100,
+                          fontSize: 17,
+                          color: Color.fromARGB(255, 0, 0, 0),
+                        ),
+                      ),
+                      const SizedBox(width: 1),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => DaftarUi()),
+                          );
+                        },
+                        child: Text(
+                          "Sign Up",
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                      ),
+                    ],
+                  ),
                   Row(
                     children: [
                       // SizedBox(width: 23),
@@ -141,7 +227,7 @@ class _MyWidgetState extends State<Sclingfigma> {
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: Image.asset(
-                            'assets/images/flat-color-icons_google.png',
+                            'assets/images/goggle.jpg',
                             height: 40,
                             width: 40,
                           ),
@@ -159,22 +245,22 @@ class _MyWidgetState extends State<Sclingfigma> {
                             ),
                             borderRadius: BorderRadius.circular(4),
                           ),
-                          child: Image.asset('assets/images/cib_apple.png'),
+                          child: Image.asset('assets/images/tweter.jpg'),
                         ),
                       ),
                       Expanded(
                         child: Container(
                           // margin: const EdgeInsets.only(top: 88, right: 48),
-                          padding: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(9),
                           width: 88,
                           height: 49,
                           decoration: BoxDecoration(
                             border: Border.all(
                               color: Color.fromARGB(255, 106, 106, 116),
                             ),
-                            borderRadius: BorderRadius.circular(4),
+                            borderRadius: BorderRadius.circular(9),
                           ),
-                          child: Image.asset('assets/images/Frame 1.png'),
+                          child: Image.asset('assets/images/facebok.jpg'),
                         ),
                       ),
                     ],

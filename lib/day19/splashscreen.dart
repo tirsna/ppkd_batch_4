@@ -1,9 +1,9 @@
 
 import 'package:flutter/material.dart';
-import 'package:ppkd_batch_4/appimeage.dart';
-import 'package:ppkd_batch_4/day18/daftarui.dart';
-import 'package:ppkd_batch_4/day18/penyambut.dart';
-import 'package:ppkd_batch_4/latihan_splas.dart';
+import 'package:ppkd_batch_4/day18/appimeage.dart';
+import 'package:ppkd_batch_4/day19/daftarui.dart';
+import 'package:ppkd_batch_4/day19/penyambut.dart';
+import 'package:ppkd_batch_4/day18/latihan_splas.dart';
 
 class SplashScreenDay18 extends StatefulWidget {
   const SplashScreenDay18({super.key,required this.email,

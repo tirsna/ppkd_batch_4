@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_batch_4/day18/daftarui.dart';
+import 'package:ppkd_batch_4/day19/daftarui.dart';
+import 'package:ppkd_batch_4/day19/db_helper.dart';
+import 'package:ppkd_batch_4/day19/user_model.dart';
 
 class HalamanPenyambutday18 extends StatefulWidget {
   const HalamanPenyambutday18({
@@ -40,6 +42,34 @@ class _HalamanPenyambutState extends State<HalamanPenyambutday18> {
                 );
               },
               child: Text("Logout"),
+            ),
+            FutureBuilder(
+              future: DbHelper.getAllPelapor(),
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return CircularProgressIndicator();
+                } else if (snapshot.data == null) {
+                  return Text("Data tidak ada");
+                } else {
+                  final data = snapshot.data as List<UserModel>;
+                  return Expanded(
+                    child: ListView.builder(
+                      itemCount: data.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        final items = data[index];
+                        return Column(
+                          children: [
+                            ListTile(
+                              title: Text(items.username ?? ""),
+                              subtitle: Text(items.email ?? ""),
+                            ),
+                          ],
+                        );
+                      },
+                    ),
+                  );
+                }
+              },
             ),
           ],
         ),

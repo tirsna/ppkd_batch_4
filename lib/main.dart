@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
-
+import 'package:ppkd_batch_4/day19/sclingfigma.dart';
+import 'package:ppkd_batch_4/day19/daftarui.dart';
+// import 'package:ppkd_batch_4/checkbox.dart';
+// import 'package:ppkd_batch_4/day18/daftarui.dart';
+// import 'package:ppkd_batch_4/day19/splashscreen.dart';
 import 'package:ppkd_batch_4/tugas10.dart';
+// import 'package:ppkd_batch_4/tugas10.dart';
 
 // import 'package:ppkd_batch_4/tester.dart';
 // import 'package:ppkd_batch_4/tugas4.dart';
@@ -9,19 +14,11 @@ import 'package:ppkd_batch_4/tugas10.dart';
 //import 'package:ppkd_batch_4/tugas5.dart';
 
 void main() {
-  runApp(const MyApp(email: '', nama: '', kota: ''));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({
-    super.key,
-    required this.email,
-    required this.nama,
-    required this.kota,
-  });
-  final String email;
-  final String nama;
-  final String kota;
+  const MyApp({super.key});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -45,7 +42,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
       ),
-      home: Tugas10(),
+      home: Sclingfigma(),
     );
   }
 }

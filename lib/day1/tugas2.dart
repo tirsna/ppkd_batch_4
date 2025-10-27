@@ -5,7 +5,7 @@ class Tugas2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var icon = Icon(Icons.phone, color: Colors.blueAccent, size: 20);
+    var icon = Icon(Icons.phone, color: const Color.fromARGB(255, 246, 247, 248), size: 20);
     return Scaffold(
       //baris1
       backgroundColor: const Color.fromARGB(255, 241, 226, 226),
