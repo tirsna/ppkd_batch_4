@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_batch_4/day18/latihan_splas.dart';
-import 'package:ppkd_batch_4/day19/penyambut.dart';
+import 'package:ppkd_batch_4/penyambut.dart';
 import 'package:ppkd_batch_4/day19/db_helper.dart';
 import 'package:ppkd_batch_4/day19/studenmodel.dart';
 import 'package:ppkd_batch_4/day19/user_model.dart';

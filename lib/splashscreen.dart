@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_batch_4/day18/appimeage.dart';
 import 'package:ppkd_batch_4/day19/daftarui.dart';
-import 'package:ppkd_batch_4/day19/penyambut.dart';
+import 'package:ppkd_batch_4/penyambut.dart';
 import 'package:ppkd_batch_4/day18/latihan_splas.dart';
 
 class SplashScreenDay18 extends StatefulWidget {
@@ -30,7 +30,7 @@ class _SplashScreenDay18State extends State<SplashScreenDay18> {
       if (isLogin != null && isLogin == true) {
         Navigator.pushAndRemoveUntil(
           context,
-          MaterialPageRoute(builder: (context) => HalamanPenyambutday18(email: '',nama: '',kota: '')),
+          MaterialPageRoute(builder: (context) => HalamanPenyambut(email: '',nama: '',kota: '')),
           (route) => false,
         );
       } else {

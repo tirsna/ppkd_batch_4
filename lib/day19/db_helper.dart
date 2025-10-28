@@ -37,6 +37,7 @@ class DbHelper {
       user.toMap(),
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
+
     print(user.toMap());
   }
 
@@ -75,5 +76,25 @@ class DbHelper {
     final List<Map<String, dynamic>> results = await dbs.query(tableUser);
     print(results.map((e) => UserModel.fromMap(e)).toList());
     return results.map((e) => UserModel.fromMap(e)).toList();
+  }
+  //UPDATE SISWA
+  static Future<void> updatePelapor(UserModel user) async {
+    final dbs = await db();
+    //Insert adalah fungsi untuk menambahkan data (CREATE)
+    await dbs.update(
+      tableLaporan,
+      user.toMap(),
+      where: "id = ?",
+      whereArgs: [user.id],
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+    print(user.toMap());
+  }
+
+  //DELETE SISWA
+  static Future<void> deletePelapor(int id) async {
+    final dbs = await db();
+    //Insert adalah fungsi untuk menambahkan data (CREATE)
+    await dbs.delete(tableUser, where: "id = ?", whereArgs: [id]);
   }
 }
