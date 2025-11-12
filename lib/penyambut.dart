@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_batch_4/buildtextfield.dart';
+import 'package:ppkd_batch_4/day19/buildtextfield.dart';
 import 'package:ppkd_batch_4/day18/latihan_splas.dart';
 import 'package:ppkd_batch_4/day19/db_helper.dart';
-import 'package:ppkd_batch_4/day19/sclingfigma.dart';
-import 'package:ppkd_batch_4/day19/studenmodel.dart';
+import 'package:ppkd_batch_4/sclingfigma.dart';
 import 'package:ppkd_batch_4/day19/user_model.dart';
 
 class HalamanPenyambut extends StatefulWidget {
@@ -25,7 +24,8 @@ class _HalamanPenyambutState extends State<HalamanPenyambut> {
     DbHelper.getAllPelapor();
     setState(() {});
   }
-  Future<void> _onEdit(UserModel user) async {
+
+  Future<void> _onedit(UserModel user) async {
     final editNameC = TextEditingController(text: user.username);
     final editEmailC = TextEditingController(text: user.email);
     final editcityC = TextEditingController(text: user.kota);
@@ -68,7 +68,7 @@ class _HalamanPenyambutState extends State<HalamanPenyambut> {
         id: user.id,
         username: editNameC.text,
         email: editEmailC.text,
-       nohp: int.parse(editnoHPC.text),
+        nohp: int.parse(editnoHPC.text),
         kota: editcityC.text,
       );
       DbHelper.updatePelapor(updated);
@@ -117,6 +117,7 @@ class _HalamanPenyambutState extends State<HalamanPenyambut> {
       // Fluttertoast.showToast(msg: "Data berhasil di hapus");
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -187,16 +188,9 @@ class _HalamanPenyambutState extends State<HalamanPenyambut> {
 
               child: Text("Logout"),
             ),
-            
           ],
         ),
       ),
     );
-    
   }
-  
 }
-
-
-
-

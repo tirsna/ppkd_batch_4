@@ -4,14 +4,14 @@ import 'package:ppkd_batch_4/penyambut.dart';
 import 'package:ppkd_batch_4/day19/db_helper.dart';
 import 'package:ppkd_batch_4/day19/user_model.dart';
 
-class DaftarUi extends StatefulWidget {
-  const DaftarUi({super.key});
+class DaftarResqcare extends StatefulWidget {
+  const DaftarResqcare({super.key});
 
   @override
-  State<DaftarUi> createState() => _DaftarUiState();
+  State<DaftarResqcare> createState() => _DaftarResqcareState();
 }
 
-class _DaftarUiState extends State<DaftarUi> {
+class _DaftarResqcareState extends State<DaftarResqcare> {
   bool isbuttonenable = false;
   final TextEditingController namacontroler = TextEditingController();
   final TextEditingController emailcontroler = TextEditingController();
@@ -43,6 +43,8 @@ class _DaftarUiState extends State<DaftarUi> {
   Widget build(BuildContext context) {
     //1
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 1, 78, 46),
+
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -70,7 +72,7 @@ class _DaftarUiState extends State<DaftarUi> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 25),
                     Text("nama "),
                     SizedBox(height: 8),
                     TextFormField(
@@ -184,13 +186,13 @@ class _DaftarUiState extends State<DaftarUi> {
 
             Center(
               child: SizedBox(
-                width: 30,
-                height: 20,
+                width: 100,
+                height: 60,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xff1D61E7),
+                    backgroundColor: Color.fromARGB(255, 7, 85, 0),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(100),
                     ),
                   ),
                   onPressed: () {
@@ -232,7 +234,7 @@ class _DaftarUiState extends State<DaftarUi> {
                   child: Text(
                     "daftar",
                     style: TextStyle(
-                      color: const Color.fromARGB(26, 255, 0, 0),
+                      color: const Color.fromARGB(255, 255, 255, 255),
                     ),
                   ),
                 ),
@@ -244,8 +246,9 @@ class _DaftarUiState extends State<DaftarUi> {
                 Text(
                   "have an account?",
                   style: TextStyle(
+                    color: Colors.white,
                     fontFamily: 'Inter',
-                    fontWeight: FontWeight.w100,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(width: 1),
@@ -255,7 +258,6 @@ class _DaftarUiState extends State<DaftarUi> {
                   },
                   child: Text("Sign In", style: TextStyle(color: Colors.blue)),
                 ),
-                 
               ],
             ),
           ],
