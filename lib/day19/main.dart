@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_batch_4/sclingfigma.dart';
+import 'package:ppkd_batch_4/loginscliing.dart';
 import 'package:ppkd_batch_4/day19/daftarui.dart';
 // import 'package:ppkd_batch_4/checkbox.dart';
 // import 'package:ppkd_batch_4/day18/daftarui.dart';

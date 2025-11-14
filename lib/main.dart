@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_batch_4/day32/models/rickmorty_model.dart';
+import 'package:ppkd_batch_4/day33/views/login_scren.dart';
 import 'package:ppkd_batch_4/halamanutama.dart';
 import 'package:ppkd_batch_4/day19/projekresqcer/daftar_resqcare.dart';
-import 'package:ppkd_batch_4/sclingfigma.dart';
+import 'package:ppkd_batch_4/loginscliing.dart';
 import 'package:ppkd_batch_4/day19/daftarui.dart';
 // import 'package:ppkd_batch_4/checkbox.dart';
 // import 'package:ppkd_batch_4/day18/daftarui.dart';
 // import 'package:ppkd_batch_4/day19/splashscreen.dart';
 import 'package:ppkd_batch_4/day1/tugas10.dart';
 import 'package:ppkd_batch_4/day19/projekresqcer/loginresqcare.dart';
-import 'package:ppkd_batch_4/views/splas_screen.dart';
-import 'package:ppkd_batch_4/views/user_screen.dart';
+import 'package:ppkd_batch_4/day32/views/splas_screen.dart';
+import 'package:ppkd_batch_4/day32/views/user_screen.dart';
 // import 'package:ppkd_batch_4/tugas10.dart';
 
 // import 'package:ppkd_batch_4/tester.dart';
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
       ),
-      home: SplashScreen(),
+      home: LoginScreenNew(),
     );
   }
 }

@@ -23,7 +23,6 @@ class _MyWidgetState extends State<Sclingfigma> {
           children: [
             Container(
               height: 300,
-              // color: Color.fromARGB(255, 90, 90, 92),
               width: double.infinity,
               decoration: BoxDecoration(
                 image: const DecorationImage(

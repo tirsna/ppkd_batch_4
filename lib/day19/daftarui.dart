@@ -1,3 +1,4 @@
+//entong punya😎🥰😘
 import 'package:flutter/material.dart';
 import 'package:ppkd_batch_4/day18/latihan_splas.dart';
 import 'package:ppkd_batch_4/penyambut.dart';
